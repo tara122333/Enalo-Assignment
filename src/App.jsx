@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 import { Pagination } from 'antd';
-import Desing from "./Components/Desing";
 import axios from "axios";
 const  App = () => {
-
   const [tableData, setTableData] = useState(0);
   const [counter, setCounter] = useState();
   const func = async() =>{
     const res = await axios.get(`https://stagingapi.enalo.in/inventory/get-items/?offset=${counter}`);
 
     setTableData(res.data);
-    // console.log(tableData);
   }
 
   useEffect(()=>{
@@ -19,9 +16,6 @@ const  App = () => {
 
 
   const counts = tableData.count;
-  // console.log(counts);
-
-
   const onChange = (props) =>{
     console.log(props);
     const temp =  ( props - 1 )*10;
@@ -31,7 +25,7 @@ const  App = () => {
   console.log(counter);
   return (
     <>
-      <Desing />
+    <h1>Id</h1>
       <h1>
         {
           tableData?.results?.map((items)=>(
