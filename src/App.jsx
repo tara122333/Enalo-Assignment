@@ -26,7 +26,6 @@ const  App = () => {
   return (
     <>
     <h1>Id</h1>
-      <h1>
         {
           tableData?.results?.map((items)=>(
             <h1>
@@ -36,7 +35,6 @@ const  App = () => {
             </h1>
           ))
         }
-      </h1>
 
       
       <Pagination defaultCurrent={1} total={counts} onChange={onChange} />
